@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['user'])) {
-        header("location: login.php");
+        header("location: login.html");
     }
 ?>
 <div class="modal fade" id="addForm" tabindex="-1" aria-hidden="true">
