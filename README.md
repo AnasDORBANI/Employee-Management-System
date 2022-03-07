@@ -39,7 +39,8 @@ tree
 │   ├── footer.php
 │   ├── formAddEmpl.php
 │   ├── header.php
-│   ├── login.php
+│   ├── index.php
+│   ├── login.html
 │   ├── logout.php
 │   ├── mysqlConnect.php
 │   ├── selectEmpl.php
@@ -47,7 +48,7 @@ tree
 │   └── verif.php
 └── README.md
 
-1 directory, 16 files
+1 directory, 17 files
 
 ```
 
