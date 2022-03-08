@@ -1,4 +1,7 @@
-
+<br />
+<p align="center">
+   <img src="https://github.com/AnasDORBANI/Employee-Management-System/banner.png" alt="banner">
+</p>
 
 <!-- TABLE OF CONTENTS -->
 # Table of Contents
