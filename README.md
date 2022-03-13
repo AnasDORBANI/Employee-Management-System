@@ -1,6 +1,6 @@
 <br />
 <p align="center">
-   <img src="https://github.com/AnasDORBANI/Employee-Management-System/blob/main/banner.png" alt="banner">
+   <img src="https://github.com/AnasDORBANI/Employee-Management-System/blob/main/images/banner.png" alt="banner">
 </p>
 
 <!-- TABLE OF CONTENTS -->
