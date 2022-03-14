@@ -32,6 +32,8 @@ tree
 ```
 ```bash
 .
+├── images
+│   └── banner.png
 ├── main
 │   ├── addEmpl.php
 │   ├── addForm.php
@@ -51,8 +53,7 @@ tree
 │   └── verif.php
 └── README.md
 
-1 directory, 17 files
-
+2 directories, 18 files
 ```
 
 # Requirements
@@ -71,20 +72,17 @@ CREATE DATABASE GRH;
 then create the main tables. 
 We have **Users** table for login
 ```
-Users(numUser int Primary Key Auto Increment, login varchar(100), password varchar(32),type
-enum(’AD’,’US’));
+CREATE TABLE `GRH`.`Users` ( `numUser` INT NOT NULL AUTO_INCREMENT , `login` VARCHAR(100) NOT NULL , `password` VARCHAR(32) NOT NULL , `type` ENUM('AD','US') NOT NULL , PRIMARY KEY (`numUser`));
 ```
-**NOTE:** create the users you want to login with.
+**NOTE:** create the users you want to login with and put a hashed password using md5 function.
 
 and define services in the **Services** table
 ```
-Services(numServ int Primary Key Auto Increment, designationServ varchar(100), descriptionServ
-varchar(100));
+CREATE TABLE `GRH`.`Services` ( `numServ` INT NOT NULL AUTO_INCREMENT , `designationServ` VARCHAR(100) NOT NULL , `descriptionServ` VARCHAR(100) NOT NULL , PRIMARY KEY (`numServ`));
 ```
 end last you need to create **Employes** table
 ```
-Employes(code int Primary Key Auto Increment, nom varchar(100), prenom varchar(100), sexe enum(‘M’ ;’F’),
-adresse text, dateNaissance date, numServ int foreign Key References Services(numServ) );
+CREATE TABLE `GRH`.`Employes` ( `code` INT NOT NULL AUTO_INCREMENT ,  `nom` VARCHAR(100) NOT NULL ,  `prenom` VARCHAR(100) NOT NULL ,  `sexe` ENUM('M','F') NOT NULL ,  `adresse` TEXT NOT NULL ,  `dateNaissance` DATE NOT NULL ,  `numServ` INT NOT NULL ,    PRIMARY KEY  (`code`), FOREIGN KEY (`numServ`) REFERENCES `Services`(`numServ`) ON DELETE RESTRICT ON UPDATE RESTRICT);
 ```
 
 # Usage
