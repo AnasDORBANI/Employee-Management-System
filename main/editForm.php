@@ -1,8 +1,8 @@
 <?php
-    session_start();
+    /* session_start();
     if (!isset($_SESSION['user'])) {
         header("location: login.html");
-    }
+    } */
 ?>
 
 <?php
@@ -57,9 +57,9 @@
                 <option value="3" <?php if($numServ == '3'){echo 'selected';}?>>Reclamation</option>
             </select>
         </div>
-        <div class="mb-3 row px-3">
-            <button type="button" class="btn btn-primary col submit" data-bs-toggle="modal"
-                data-bs-target="#cancel">Cancel</button>
+        <div class="mb-3 row px-3 gap-3">
+            <button type="button" class="btn btn-danger col submit" data-bs-toggle="modal"
+                data-bs-target="#cancel">Return</button>
             <button type="button" class="btn btn-primary col submit" data-bs-toggle="modal"
                 data-bs-target="#edit">Submit</button>
             <div class="modal fade" id="edit" tabindex="-1" role="dialog" aria-hidden="true">
@@ -85,14 +85,14 @@
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel"><i class="bi bi-info-circle-fill"></i>
-                                    Confirm Editing</h5>
+                                    Confirm return</h5>
                             </div>
                             <div class="modal-body">
                                 Do you really want to cancel editing.
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                                <button type="submit" class="btn btn-success">Edit</button>
+                                <button type="submit" class="btn btn-primary">Confirm</button>
                             </div>
                         </div>
                     </div>
