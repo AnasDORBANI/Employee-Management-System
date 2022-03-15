@@ -1,17 +1,22 @@
+<!-- block access if not sign in -->
 <?php
     session_start();
     if (!isset($_SESSION['user'])) {
         header("location: login.html");
     }
 ?>
+<!-- create a modal form -->
 <div class="modal fade" id="addForm" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
             <div class="modal-body position-relative">
+                <!-- close button -->
                 <button type="button" class="btn-close position-absolute end-0 top-0 p-3" data-bs-dismiss="modal"
                     aria-label="Close"></button>
+                <!-- form to add employee -->
                 <form class="rounded-3 container" method="get" action="addEmpl.php">
                     <h2>Add Employee</h2>
+                    <!-- name section -->
                     <div class="mb-3">
                         <label class="form-label">Name</label>
                         <div class="box-container row px-2 gap-3">
@@ -21,6 +26,7 @@
                                 name="lName" required>
                         </div>
                     </div>
+                    <!-- sexe section -->
                     <div class="mb-3">
                         <label class="form-label">Sexe</label>
                         <div class="sexe_container d-flex justify-content-around">
@@ -34,15 +40,18 @@
                             </div>
                         </div>
                     </div>
+                    <!-- birthday section -->
                     <div class="mb-3">
                         <label class="form-label">Birthday</label>
                         <input class="form-control" type="date" class="date" name="bDay" required>
                     </div>
+                    <!-- address section -->
                     <div class="mb-3">
                         <label class="form-label">Address</label>
                         <textarea class="form-control" placeholder="Enter Your Address" rows="4" name="adresse"
                             required></textarea>
                     </div>
+                    <!-- secvices section -->
                     <div class="mb-3">
                         <label class="form-label">Service</label>
                         <select class="form-select" name="service" placeholder="Select your service" required>
@@ -52,6 +61,7 @@
                             <option value="3">Reclamation</option>
                         </select>
                     </div>
+                    <!-- submit and clear section -->
                     <div class="mb-3 row px-3 gap-3">
                         <input class="btn btn-danger col clear" type="reset" value="clear">
                         <input class="btn btn-primary col submit" type="submit" value="Submit">

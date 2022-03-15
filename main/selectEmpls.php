@@ -1,3 +1,4 @@
+<!-- block access if not sign in -->
 <?php
     session_start();
     if (!isset($_SESSION['user'])) {
@@ -5,7 +6,9 @@
     }
 ?>
 <?php
+    /* connect to database */
     include 'mysqlConnect.php';
+    /* create employee's table rows from the database*/ 
     $query = "SELECT * FROM `Employes`";
     $employes = mysqli_query($con,$query);
     while($row = mysqli_fetch_assoc($employes)) {

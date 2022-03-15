@@ -1,3 +1,4 @@
+<!-- block access if not sign in -->
 <?php
     session_start();
     if (!isset($_SESSION['user'])) {
@@ -14,19 +15,20 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <title>Employee</title>
+    <title>Employee Management System</title>
     <style>
-        #btn-back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: none;
-        }
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+    }
     </style>
 </head>
 
 <body class="bg-light">
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
         <div class="container-md container-fluid">
             <a class="navbar-brand fw-bold fs-4" href="#">Employee.ma</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -36,11 +38,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <form class="d-flex ms-auto my-sm-3" method="get" action="logout.php">
-                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-box-arrow-left"></i> LogOut</button>
+                    <button class="btn btn-outline-success" type="submit"><i class="bi bi-box-arrow-left"></i>
+                        LogOut</button>
                 </form>
             </div>
         </div>
     </nav>
+    <!-- go to top button -->
     <button type="button" class="btn btn-dark btn-floating btn-lg" id="btn-back-to-top">
         <i class="bi bi-arrow-up"></i>
     </button>

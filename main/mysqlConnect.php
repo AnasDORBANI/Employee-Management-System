@@ -1,3 +1,4 @@
+<!-- block access if not sign in -->
 <?php
     session_start();
     if (!isset($_SESSION['user'])) {
@@ -5,12 +6,14 @@
     }
 ?>
 <?php
-    $host = "localhost";
-    $user = "root";
-    $pass = "";
-    $bd = "GRH";
-    $con = mysqli_connect($host,$user,$pass,$bd);
+    /* define login constants */
+    define('host', "localhost");
+    define('user', "root");
+    define('pass', "");
+    define('bd', "GRH");
+    $con = mysqli_connect(host,user,pass,bd);
+    /* return to the login page if not connect */
     if($con == FALSE){
-        echo "la connexion a echouee";
+        header("location: login.html");
     }
 ?>
