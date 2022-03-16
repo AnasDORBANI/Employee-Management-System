@@ -42,7 +42,6 @@ tree
 │   ├── editEmpl.php
 │   ├── editForm.php
 │   ├── footer.php
-│   ├── formAddEmpl.php
 │   ├── header.php
 │   ├── index.php
 │   ├── login.html
@@ -53,7 +52,8 @@ tree
 │   └── verif.php
 └── README.md
 
-2 directories, 18 files
+2 directories, 17 files
+
 ```
 
 # Requirements
