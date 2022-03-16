@@ -66,22 +66,22 @@ All-in-one packages are available for Windows which contain Apache, PHP, MySQL, 
 Launch your server then go to your **phpmyadmin** page in your browser then setup your database like below.
 
 Fisrt you need to create **GRH** DataBase,
-```
+```mysql
 CREATE DATABASE GRH;
 ```
 then create the main tables. 
 We have **Users** table for login
-```
+```mysql
 CREATE TABLE `GRH`.`Users` ( `numUser` INT NOT NULL AUTO_INCREMENT , `login` VARCHAR(100) NOT NULL , `password` VARCHAR(32) NOT NULL , `type` ENUM('AD','US') NOT NULL , PRIMARY KEY (`numUser`));
 ```
 **NOTE:** create the users you want to login with and put a hashed password using md5 function.
 
 and define services in the **Services** table
-```
+```mysql
 CREATE TABLE `GRH`.`Services` ( `numServ` INT NOT NULL AUTO_INCREMENT , `designationServ` VARCHAR(100) NOT NULL , `descriptionServ` VARCHAR(100) NOT NULL , PRIMARY KEY (`numServ`));
 ```
 end last you need to create **Employes** table
-```
+```mysql
 CREATE TABLE `GRH`.`Employes` ( `code` INT NOT NULL AUTO_INCREMENT ,  `nom` VARCHAR(100) NOT NULL ,  `prenom` VARCHAR(100) NOT NULL ,  `sexe` ENUM('M','F') NOT NULL ,  `adresse` TEXT NOT NULL ,  `dateNaissance` DATE NOT NULL ,  `numServ` INT NOT NULL ,    PRIMARY KEY  (`code`), FOREIGN KEY (`numServ`) REFERENCES `Services`(`numServ`) ON DELETE RESTRICT ON UPDATE RESTRICT);
 ```
 
